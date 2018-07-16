@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <!--<script type="text/javascript">-->
+    <!--function doDel(){-->
+        <!--var mymessage=confirm("是否删除？");-->
+        <!--if(mymessage==true)-->
+        <!--{-->
+            <!--alert("删除成功!");-->
+            <!--window.location.href="localhost:8005/articles";-->
+        <!--}-->
+        <!--else-->
+        <!--{-->
+            <!--alert("删除失败!");-->
+        <!--}-->
+<!--}-->
+<!--</script>-->
+</head>
+<body   background="/static/image/blog.jpg">
+<div style="
+    margin-left: 450px;
+    margin-right: 450px;
+">
+<div align="center">
+<h1>{{ article_title }}
+</h1>
+</div>
+    <div style="
+    margin-top: 30px;
+" align="center">{{ article_publish }}</div>
+<div align="center" >
+
+<p style="color:#556B2F;margin-top: 30px;margin-left: 150px;margin-right: 150px;">{{ article_description }}</p>
+
+</div>
+    <div align="center">
+<p style="
+    margin-top: 30px;
+    margin-left: 120px;
+    margin-right: 120px;
+">{{ article_content }}</p>
+    </div>
+<div align="center" style="
+    margin-top: 35px;
+    margin-left: 300px;
+">
+<a style="color:#800000" href="{% url 'modify_page' article_id %}">修改文章</a>
+<a style="color:#800000" href="{% url 'delete' article_id %}">删除</a>
+
+<!--<button onClick="doDel()">删除</button>-->
+</div>
+</body>
+</html>
+
+

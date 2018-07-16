@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article Page</title>
+</head>
+<body background="/static/image/blog5.jpg"  >
+    <div align="center" >
+    <div style="font-size:18px;margin-left: 1000px;">您好：{{user}}
+        <a href="/logout/">退出</a></div>
+
+<!--<di="navbar" class="collapse navbar-collapse">-->
+    <!--<ul class="nav navbar-nav navbar-right">-->
+
+    <!--</ul>-->
+<!--</div>-->
+<h3><a href="/edit_page/" style="
+    margin-left: 600px;
+    margin-top: 100px;">添加新文章</a> </h3>
+
+    <!--发布会表单-->
+      <div  >
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form" method="get" action="/search_name/">
+            <div class="form-group" style="margin-right: 350px;">
+              <input style="width:100px; height:20px;" name="name" type="text" placeholder="标题    " class="form-control">
+            </div >
+            <button type="submit" class="btn btn-success" style="
+    margin-right: 411px;
+
+">搜索</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+
+<div class="row" style="padding-top: 80px;
+    margin-right: 35px;font-size:18px">
+<div class="col-md-6">
+<table class="table table-striped">
+<thead>
+
+</thead>
+<tbody>
+    {% for article in articles %}
+    <tr>
+    <td><a href="/articles/{{article.id}}">{{ article.title }}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+   <!-- 列表分页器 -->
+    <div class="pagination">
+      <span class="step-links">
+        {% if articles.has_previous %}
+          <a href="?page={{ articles.previous_page_number }}">previous</a>
+        {% endif %}
+          <span class="current">
+            Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+          </span>
+        {% if articles.has_next %}
+
+           <a href="?page={{ articles.next_page_number }}">next</a>
+          {% endif %}
+
+      </span>
+    </div>
+    </div>
+</body>
+</html>

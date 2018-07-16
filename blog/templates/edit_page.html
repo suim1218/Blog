@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Page </title>
+</head>
+<body background="/static/image/blog1.jpg">
+<form action="/edit/action/" method="post">
+    <div align="center" >
+    <h2>标题</h2>
+    <textarea  rows="6" style="font-size:18px;width:800px; height:30px;" name="title" type="text"></textarea>
+        <h2>描述</h2>
+    <textarea rows="10" name="description" type="text" style="font-size:18px;width:800px; height:100px;"></textarea>
+        <h2>内容</h2>
+
+        <br>
+      <font size="3" color="red">{{error}}</font><br>
+    <button style="width:200px;height:50px;margin-left: 550px;margin-top: 30px;" type="submit" >提交</button>
+    </div>
+</form>
+</body>
+</html>

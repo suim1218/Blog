@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify Page </title>
+
+</head>
+<body background="/static/image/blog1.jpg">
+<form action="{% url 'modify_action' article_id%}" method="post">
+    <!--<input type="hidden" name="article_id" value="{{ article.id }}">-->
+    <div align="center">
+        <h2>标题</h2>
+        <textarea name="title" type="text" style="font-size:18px;width:800px; height:30px;" >{{ article_title }}</textarea>
+<h2>描述</h2>
+        <textarea name="description" style="font-size:18px;width:800px; height:100px; type="text" >{{ article_description }}</textarea>
+  <h2>内容</h2>
+        <textarea name="content" style="font-size:18px;width:800px; height:400px;" type="text" >{{ article_content }}</textarea>
+      <font size="3" color="red">{{error}}</font><br>
+
+    <button type="submit" style="width:200px;height:50px;margin-left: 550px;margin-top: 30px;" >提交</button>
+        </div>
+ </form>
+</body>
+</html>
